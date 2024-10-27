@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const draculaFlow1 = require("./draculaFlow1.json");
 const draculaFlow2 = require("./draculaFlow2.json");
 const draculaFlow3 = require("./draculaFlow3.json");
@@ -16,28 +15,25 @@ const draculaFlows = [
 
 function getRandomQuote(flow) {
   let file = [];
-  if (flow && flow >= 0 && flow <= 4) {
-    file = draculaFlows[flow];
+  if (flow && flow >= 1 && flow <= 5) {
+    file = draculaFlows[flow - 1];
+    return file[Math.floor(Math.random() * file.length)];
   } else {
-    file = draculaFlows[Math.floor(Math.random() * draculaFlows.length)];
+    const allQuotes = draculaFlows.flatMap((str) => str);
+    return allQuotes[Math.floor(Math.random() * allQuotes.length)];
   }
-  // Select random quote from that file
-  const randomQuote = file[Math.floor(Math.random() * file.length)];
-  return randomQuote;
 }
-
 
 const args = process.argv;
-if(args.length >=3){
-  const number = args[2]
-  if(!number || isNaN(Number(number))){
-    console.log('Usage: darcula-flow <number> (optional)')
+if (args.length >= 3) {
+  const number = args[2];
+  if (!number || isNaN(Number(number))) {
+    console.log("Usage: darcula-flow <number> (optional)");
     return 1;
   }
-  console.log(getRandomQuote(number))
-  return 0
-}else{
-  console.log(getRandomQuote())
-  return 0
+  console.log(getRandomQuote(number));
+  return 0;
+} else {
+  console.log(getRandomQuote());
+  return 0;
 }
-
