@@ -2,13 +2,15 @@
   "name": "dracula-flow",
   "version": "5.0.0",
   "main": "index.js",
-  "scripts": {
+  "scripts": {},
+  "author": "Plumcorp Corporation",
+  "repository": {
+    "url": "https://github.com/lucasnbsb/DraculaFlow",
+    "type": "github"
   },
-  "author": "",
   "license": "ISC",
   "description": "This shit ain't nothing to me man.",
-  "dependencies": {
-  },
+  "dependencies": {},
   "bin": {
     "dracula-flow": "./index.js"
   }
