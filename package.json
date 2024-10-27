@@ -1,0 +1,15 @@
+{
+  "name": "dracula-flow",
+  "version": "5.0.0",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "This shit ain't nothing to me man.",
+  "dependencies": {
+  },
+  "bin": {
+    "dracula-flow": "./index.js"
+  }
+}
